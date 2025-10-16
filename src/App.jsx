@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar"
 
 
 const fetchIssues = async () => {
-        const result = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const result = await fetch("/data.json");
         return result.json()
     }
 

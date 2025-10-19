@@ -1,16 +1,35 @@
-# React + Vite
+# PH — Assignment System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React-based web application for managing and tracking assignment issues. It allows users to view, filter, and update issue statuses in a clean and responsive interface.
 
-Currently, two official plugins are available:
+- [Live Link: ](https://demo-ph-helpdesk.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⚙️ Setup & Run
 
-## React Compiler
+1. Clone the repository
+2. Ensure `data.json` exists in your `public/` directory
+3. Install dependencies and start the app:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+   ```bash
+   npm install
+   npm run dev   # For Vite
+   # or
+   npm start     # For CRA
+   ```
+4. Open [http://localhost:5173](http://localhost:5173) (or your local dev port)
 
-## Expanding the ESLint configuration
+## 📁 Example `data.json`
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```json
+[
+  {
+    "ticketId": "T001",
+    "requestedBy": "John Doe",
+    "userImg": "/images/john.jpg",
+    "subject": "Assignment Extension Request",
+    "description": "Need an extension for project submission.",
+    "priority": "High",
+    "status": "Pending"
+  }
+]
+```

@@ -1,27 +1,25 @@
 import { Suspense } from "react";
-import Container from "./components/Container"
 import Footer from "./components/Footer"
 import IssuesManagement from "./components/IssuesManagement";
 import Navbar from "./components/Navbar"
+import Loading from "./components/Loading";
 
 
 const fetchIssues = async () => {
-        const result = await fetch("/data.json");
-        return result.json()
-    }
+  const result = await fetch("/data.json");
+  return result.json();
+}
 
 function App() {
   const fetchPromises = fetchIssues();
 
-
   return (
     <>
-      <Navbar></Navbar>
-      <Suspense fallback="loading...">
-        <IssuesManagement fetchPromises={fetchPromises}></IssuesManagement>
-
+      <Navbar />
+      <Suspense fallback={<Loading />}>
+        <IssuesManagement fetchPromises={fetchPromises} />
       </Suspense>
-      <Footer></Footer>
+      <Footer />
     </>
   )
 }

@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Card = ({issue, data, setData}) => {
     
     const handleClick = () => {

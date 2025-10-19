@@ -8,7 +8,11 @@ const IssuesManagement = ({fetchPromises}) => {
     const [toggleStatus, setToggleStatus] = useState("All");  
     const initialData = use(fetchPromises);
 
-    const [data, setData] = useState(initialData);    
+    const [data, setData] = useState(initialData);
+    
+    const filteredData = toggleStatus === "All" 
+        ? data
+        : data.filter(element => element.status === toggleStatus);
 
     return (
         <div>
@@ -18,14 +22,17 @@ const IssuesManagement = ({fetchPromises}) => {
             <Toggles_Btns toggleStatus={toggleStatus} setToggleStatus={setToggleStatus}></Toggles_Btns>
 
             <Container>
-                <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-5'>
-                    {
-                    data.map((issue, index) => {
-                        return <Card key={index} issue={issue}></Card>;}
-                    )
+                {
+                    filteredData.length === 0 
+                    ? (<h2 className='flex justify-center items-center font-bold text-4xl text-purple-500 text-shadow-2xs my-6'>No Data Found</h2>) 
+                    : (<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 my-6'>
+                        {filteredData.map((issue, index) => (
+                            <Card key={index} issue={issue} data={data} setData={setData} />
+                        ))}
+                    </div>)
                 }
-            </div>
-        </Container>
+                
+            </Container>
     </div>
         
     )

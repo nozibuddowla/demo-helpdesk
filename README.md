@@ -2,7 +2,7 @@
 
 A simple React-based web application for managing and tracking assignment issues. It allows users to view, filter, and update issue statuses in a clean and responsive interface.
 
-- [Live Link: ](https://demo-ph-helpdesk.netlify.app/)
+- [Live Link](https://demo-ph-helpdesk.netlify.app/)
 
 ## ⚙️ Setup & Run
 
